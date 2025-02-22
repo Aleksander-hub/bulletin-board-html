@@ -3,10 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulletin Board</title>
+    <title>Доска объявлений</title>
+    <style>
+        body {
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .images-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 10px;
+        }
+        .images-container img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .images-container img:hover {
+            transform: scale(1.1);
+        }
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .fullscreen.active {
+            display: flex;
+        }
+    </style>
 </head>
 <body>
-    <h1>Здравствуйте! Это проверка кода.</h1>
-    <p>Если вы видите это сообщение, значит код работает.</p>
+    <h1>Доска объявлений</h1>
+
+    <!-- Раздел: Реклама -->
+    <div class="section">
+        <h2>Реклама</h2>
+        <div class="images-container">
+            <img src="reklama/ad1.jpg" alt="Реклама 1" onclick="openFullscreen(this)">
+            <img src="reklama/ad2.jpg" alt="Реклама 2" onclick="openFullscreen(this)">
+            <img src="reklama/ad3.jpg" alt="Реклама 3" onclick="openFullscreen(this)">
+            <img src="reklama/ad4.jpg" alt="Реклама 4" onclick="openFullscreen(this)">
+            <img src="reklama/ad5.jpg" alt="Реклама 5" onclick="openFullscreen(this)">
+        </div>
+    </div>
+
+    <!-- Раздел: Срочно -->
+    <div class="section">
+        <h2>Срочно</h2>
+        <div class="images-container">
+            <img src="reklama/ad6.jpg" alt="Срочно 1" onclick="openFullscreen(this)">
+            <img src="reklama/ad7.jpg" alt="Срочно 2" onclick="openFullscreen(this)">
+            <img src="reklama/ad8.jpg" alt="Срочно 3" onclick="openFullscreen(this)">
+            <img src="reklama/ad9.jpg" alt="Срочно 4" onclick="openFullscreen(this)">
+            <img src="reklama/ad10.jpg" alt="Срочно 5" onclick="openFullscreen(this)">
+        </div>
+    </div>
+
+    <!-- Раздел: Кто хочет поработать -->
+    <div class="section">
+        <h2>Кто хочет поработать</h2>
+        <div class="images-container">
+            <img src="reklama/ad11.jpg" alt="Кто хочет поработать 1" onclick="openFullscreen(this)">
+            <img src="reklama/ad12.jpg" alt="Кто хочет поработать 2" onclick="openFullscreen(this)">
+            <img src="reklama/ad13.jpg" alt="Кто хочет поработать 3" onclick="openFullscreen(this)">
+            <img src="reklama/ad14.jpg" alt="Кто хочет поработать 4" onclick="openFullscreen(this)">
+            <img src="reklama/ad15.jpg" alt="Кто хочет поработать 5" onclick="openFullscreen(this)">
+        </div>
+    </div>
+
+    <!-- Раздел: Услуги -->
+    <div class="section">
+        <h2>Услуги</h2>
+        <div class="images-container">
+            <img src="reklama/ad16.jpg" alt="Услуги 1" onclick="openFullscreen(this)">
+            <img src="reklama/ad17.jpg" alt="Услуги 2" onclick="openFullscreen(this)">
+            <img src="reklama/ad18.jpg" alt="Услуги 3" onclick="openFullscreen(this)">
+            <img src="reklama/ad19.jpg" alt="Услуги 4" onclick="openFullscreen(this)">
+            <img src="reklama/ad20.jpg" alt="Услуги 5" onclick="openFullscreen(this)">
+        </div>
+    </div>
+
+    <!-- Раздел: Красота -->
+    <div class="section">
+        <h2>Красота</h2>
+        <div class="images-container">
+            <img src="reklama/ad21.jpg" alt="Красота 1" onclick="openFullscreen(this)">
+            <img src="reklama/ad22.jpg" alt="Красота 2" onclick="openFullscreen(this)">
+            <img src="reklama/ad23.jpg" alt="Красота 3" onclick="openFullscreen(this)">
+            <img src="reklama/ad24.jpg" alt="Красота 4" onclick="openFullscreen(this)">
+            <img src="reklama/ad25.jpg" alt="Красота 5" onclick="openFullscreen(this)">
+        </div>
+    </div>
+
+    <div id="fullscreen" class="fullscreen" onclick="closeFullscreen()">
+        <img id="fullscreen-img" src="" alt="Fullscreen Image">
+    </div>
+
+    <script>
+        function openFullscreen(imgElement) {
+            const fullscreenDiv = document.getElementById('fullscreen');
+            const fullscreenImg = document.getElementById('fullscreen-img');
+            fullscreenImg.src = imgElement.src;
+            fullscreenDiv.classList.add('active');
+        }
+
+        function closeFullscreen() {
+            document.getElementById('fullscreen').classList.remove('active');
+        }
+    </script>
 </body>
 </html>
