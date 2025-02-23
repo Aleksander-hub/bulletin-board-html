@@ -6,6 +6,9 @@
     <title>Доска объявлений</title>
 
 
+
+
+
     <style>
     body {
         background: url('background.jpg') no-repeat center center fixed;
@@ -16,20 +19,35 @@
         padding: 0;
     }
 
+    /* Заголовок страницы */
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-top: 20px;
+    }
+
+    /* Строка под заголовком */
+    .post-ad {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
     /* Контейнер разделов */
     .section {
         margin-bottom: 30px;
         text-align: center;
     }
 
-    /* Изображения в контейнере */
+    /* Контейнер с изображениями */
     .images-container {
         display: flex;
         gap: 10px;
-        justify-content: center;
-        flex-wrap: wrap; /* Подгоняем под экран */
-        overflow-x: auto;
+        justify-content: flex-start;
+        overflow-x: auto; /* Позволяет листать изображения */
+        scroll-behavior: smooth;
         padding: 10px;
+        margin-top: 20px;
     }
 
     /* Изображения внутри контейнера */
@@ -45,7 +63,7 @@
         transform: scale(1.1);
     }
 
-    /* Функция полноэкранного изображения */
+    /* Полноэкранное изображение */
     .fullscreen {
         position: fixed;
         top: 0;
@@ -82,6 +100,10 @@
         .section h2 {
             font-size: 20px;
         }
+
+        .post-ad {
+            font-size: 16px;
+        }
     }
 
     @media (max-width: 480px) {
@@ -90,14 +112,23 @@
         }
 
         h1 {
-            font-size: 30px;
+            font-size: 20px;
         }
 
-        .section h2 {
-            font-size: 18px;
-        }
+        .section h2 {font-size: 18px;}
+
+        .post-ad {font-size: 14px;}
     }
 </style>
+
+<body>
+    <h1>Доска объявлений</h1>
+
+    <div class="post-ad">
+        <p>Разместить объявление по т.</p>
+    </div>
+
+ 
 
     
     
