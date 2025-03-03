@@ -86,10 +86,10 @@
 
 
 
-        .back-button {
+        .close-button {
         margin-top: 10px;
         padding: 12px 25px;
-        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        background: linear-gradient(135deg, #ff4b4b, #ff7b7b);
         border: none;
         border-radius: 25px;
         cursor: pointer;
@@ -101,10 +101,11 @@
         transition: all 0.3s ease;
         }
     
-        .back-button:hover {
-        background: linear-gradient(135deg, #ff5a77, #ff6a99);
+        .close-button:hover {
+        background: linear-gradient(135deg, #e60000, #ff4d4d);
         transform: scale(1.05);
         }
+
         
 
 
@@ -131,9 +132,12 @@
         </div>
     </div>
 
-    <a href="index.html" class="back-button">Вернуться назад</a>
+    <button class="close-button" onclick="closeApp()">Закрыть приложение</button>
     <h1>            </h1>
-    
+    function closeApp() {
+    window.close();
+    }
+
 
         
 
