@@ -288,6 +288,18 @@
     </div>
 
     <script>
+        
+        // Функция выполняется сразу после загрузки страницы
+        window.onload = function () {
+            // Проверяем, запущено ли приложение внутри Telegram
+            if (window.Telegram && Telegram.WebApp) {
+                Telegram.WebApp.expand(); // Разворачиваем веб-приложение, чтобы оно не сворачивалось
+            }
+        };
+        
+        
+        
+        
         function openFullscreen(imgElement) {
             const fullscreenDiv = document.getElementById('fullscreen');
             const fullscreenImg = document.getElementById('fullscreen-img');
