@@ -134,9 +134,7 @@
 
     <button class="close-button" onclick="closeApp()">Закрыть приложение</button>
     <h1>            </h1>
-    function closeApp() {
-    window.close();
-    }
+    
 
 
         
@@ -149,6 +147,13 @@
     </div>
 
     <script>
+        
+        function closeApp() {
+            window.close();
+        }
+        
+        
+        
         function openFullscreen(imgElement) {
             const fullscreenDiv = document.getElementById('fullscreen');
             const fullscreenImg = document.getElementById('fullscreen-img');
