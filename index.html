@@ -5,27 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Доска объявлений</title>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        if (window.Telegram && Telegram.WebApp) {
-            Telegram.WebApp.expand(); // Разворачиваем WebApp в Telegram
-        }
-    });
-
-    document.addEventListener("click", function() {
-        let elem = document.documentElement;
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen().catch(err => {
-                console.log("Ошибка fullscreen: ", err.message);
-            });
-        }
-    });
-</script>
-
-
-
-    
-
 <style>
     body {
         background: url('background/background2.jpg') no-repeat center center fixed;
