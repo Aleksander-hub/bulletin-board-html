@@ -6,12 +6,22 @@
     <title>Доска объявлений</title>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (window.Telegram && Telegram.WebApp) {
+            Telegram.WebApp.expand(); // Разворачиваем WebApp в Telegram
+        }
+    });
+
     document.addEventListener("click", function() {
-        if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
+        let elem = document.documentElement;
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen().catch(err => {
+                console.log("Ошибка fullscreen: ", err.message);
+            });
         }
     });
 </script>
+
 
 
     
