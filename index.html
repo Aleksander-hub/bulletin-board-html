@@ -6,14 +6,13 @@
     <title>Доска объявлений</title>
 
 <script>
-    // Функция выполняется сразу после загрузки страницы
-    window.onload = function () {
-        // Проверяем, запущено ли приложение внутри Telegram
-        if (window.Telegram && Telegram.WebApp) {
-            Telegram.WebApp.expand(); // Разворачиваем веб-приложение, чтобы оно не сворачивалось
+    document.addEventListener("click", function() {
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
         }
-    };
+    });
 </script>
+
 
     
 
