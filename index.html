@@ -1,164 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Доска объявлений</title>
-
-<style>
-    body {
-        background: url('background/background45.jpg') no-repeat center center fixed;
-        background-size: cover;
-        font-family: Arial, sans-serif;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Заголовок страницы */
-    h1 {
-        text-align: center;
-        font-size: 36px;
-        margin-top: 20px;
-    }
-
-    /* Строка под заголовком */
-    .post-ad {
-        text-align: center;
-        font-size: 18px;
-        margin-top: 10px;
-    }
-
-    /* Контейнер разделов */
-    .section {
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    /* Контейнер с изображениями */
-    .images-container {
-        display: flex;
-        gap: 10px;
-        justify-content: flex-start;
-        overflow-x: auto; /* Позволяет листать изображения */
-        scroll-behavior: smooth;
-        padding: 10px;
-        margin-top: 20px;
-    }
-
-    /* Изображения внутри контейнера (увеличенный размер) */
-    .images-container img {
-        width: 210px; /* Увеличиваем размер изображения в 2 раза */
-        height: auto;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: transform 0.3s;
-    }
-
-    .images-container img:hover {
-        transform: scale(1.1);
-    }
-
-    /* Полноэкранное изображение */
-    .fullscreen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    .fullscreen img {
-        max-width: 90%;
-        max-height: 90%;
-        border-radius: 10px;
-    }
-
-    .fullscreen.active {
-        display: flex;
-    }
-
-    /* Медиазапросы для мобильных устройств */
-    @media (max-width: 768px) {
-        .images-container img {
-            width: 200px; /* Уменьшаем размер изображений на мобильных устройствах */
-            /* Чтобы изменить размер изображений на мобильных, поменяй значение width */
-        }
-
-        h1 {
-            font-size: 24px;
-        }
-
-        .section h2 {
-            font-size: 20px;
-        }
-
-        .post-ad {
-            font-size: 16px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .images-container img {
-            width: 160px; /* Еще больше уменьшаем изображения на экранах меньше 480px */
-            /* Измените значение width для настройки размера на маленьких экранах */
-        }
-
-        h1 {
-            font-size: 20px;
-        }
-
-        .section h2 {
-            font-size: 18px;
-        }
-
-        .post-ad {
-            font-size: 14px;
-        }
-
-
-
-        /* Контейнер для кнопки Telegram */
-        .telegram-container {
-            text-align: center;
-            margin: 20px auto;
-        }
-
-        .telegram-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 18px;
-            color: white;
-            background-color: #0088cc;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .telegram-button:hover {
-            background-color: #006699;
-        }
-
-        
-    }
-</style>
-
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <h1>Доска объявлений</h1>
-
-    <div class="post-ad">
-        <p></p>
-    </div>
-
-    
-
-
-    
 
     <!-- Раздел: Реклама -->
     <div class="section">
@@ -172,15 +21,11 @@
         </div>
     </div>
 
-
     <!-- Кнопка Telegram -->
     <div class="telegram-container">
         <p>Эта кнопка для перехода в мой Telegram, чтобы подать заявку для размещения объявления. Это бесплатно! В личку отправьте фото и текст, и я размещу это в приложении.</p>
         <a href="https://t.me/Aleksander_Oshepkov" target="_blank" class="telegram-button">Перейти в Telegram</a>
     </div>
-
-    
-    
 
     <!-- Раздел: Срочно -->
     <div class="section">
@@ -194,8 +39,7 @@
         </div>
     </div>
 
-
-     <!-- Раздел: Услуги -->
+    <!-- Раздел: Услуги -->
     <div class="section">
         <h2>Услуги</h2>
         <div class="images-container">
@@ -207,93 +51,58 @@
         </div>
     </div>
 
-
-     <div class="section">
-    <h2>Объявления с каталогом</h2>
-    <div class="images-container">
-        <div class="image-wrapper">
-            <img src="katalog/rolls2.jpg" alt="Услуги 1" onclick="openFullscreen(this)">
-            <a href="https://chat.whatsapp.com/ELxBPak7xxa4uZ7jsgWJPz" class="catalog-button" target="_blank">Перейти</a>
-        </div>
-        <div class="image-wrapper">
-            <img src="katalog/salat.jpg" alt="Услуги 2" onclick="openFullscreen(this)">
-            <a href="https://t.me/nochnoecafeveterok" class="catalog-button" target="_blank">Перейти</a>
-        </div>
-        <div class="image-wrapper">
-            <img src="katalog/katalog1/image.jpg" alt="Услуги 3" onclick="openFullscreen(this)">
-            <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
-        </div>
-        <div class="image-wrapper">
-            <img src="katalog/katalog1/image.jpg" alt="Услуги 4" onclick="openFullscreen(this)">
-            <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
-        </div>
-        <div class="image-wrapper">
-            <img src="katalog/katalog1/image.jpg" alt="Услуги 5" onclick="openFullscreen(this)">
-            <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
-        </div>
-    </div>
-</div>
-
-
-     <div class="section">
-    <h2></h2>
-    <div class="images-container">
-        <div class="image-wrapper">
-            <img src="katalog/forme.jpg" alt="Услуги 1" onclick="openFullscreen(this)">
-            <a href="https://t.me/showroomformee" class="catalog-button" target="_blank">Перейти</a>
-        </div>
-        <div class="image-wrapper">
-            <img src="katalog/katalog1/image99.jpg" alt="Услуги 2" onclick="openFullscreen(this)">
-            <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
-        </div>
-        <div class="image-wrapper">
-            <img src="katalog/katalog1/image99.jpg" alt="Услуги 3" onclick="openFullscreen(this)">
-            <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
-        </div>
-        <div class="image-wrapper">
-            <img src="katalog/katalog1/image99.jpg" alt="Услуги 4" onclick="openFullscreen(this)">
-            <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
-        </div>
-        <div class="image-wrapper">
-            <img src="katalog/katalog1/image99.jpg" alt="Услуги 5" onclick="openFullscreen(this)">
-            <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
+    <div class="section">
+        <h2>Объявления с каталогом</h2>
+        <div class="images-container">
+            <div class="image-wrapper">
+                <img src="katalog/rolls2.jpg" alt="Услуги 1" onclick="openFullscreen(this)">
+                <a href="https://chat.whatsapp.com/ELxBPak7xxa4uZ7jsgWJPz" class="catalog-button" target="_blank">Перейти</a>
+            </div>
+            <div class="image-wrapper">
+                <img src="katalog/salat.jpg" alt="Услуги 2" onclick="openFullscreen(this)">
+                <a href="https://t.me/nochnoecafeveterok" class="catalog-button" target="_blank">Перейти</a>
+            </div>
+            <div class="image-wrapper">
+                <img src="katalog/katalog1/image.jpg" alt="Услуги 3" onclick="openFullscreen(this)">
+                <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
+            </div>
+            <div class="image-wrapper">
+                <img src="katalog/katalog1/image.jpg" alt="Услуги 4" onclick="openFullscreen(this)">
+                <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
+            </div>
+            <div class="image-wrapper">
+                <img src="katalog/katalog1/image.jpg" alt="Услуги 5" onclick="openFullscreen(this)">
+                <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
+            </div>
         </div>
     </div>
-</div>
 
-    <style>
-    .image-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    <div class="section">
+        <h2></h2>
+        <div class="images-container">
+            <div class="image-wrapper">
+                <img src="katalog/forme.jpg" alt="Услуги 1" onclick="openFullscreen(this)">
+                <a href="https://t.me/showroomformee" class="catalog-button" target="_blank">Перейти</a>
+            </div>
+            <div class="image-wrapper">
+                <img src="katalog/katalog1/image99.jpg" alt="Услуги 2" onclick="openFullscreen(this)">
+                <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
+            </div>
+            <div class="image-wrapper">
+                <img src="katalog/katalog1/image99.jpg" alt="Услуги 3" onclick="openFullscreen(this)">
+                <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
+            </div>
+            <div class="image-wrapper">
+                <img src="katalog/katalog1/image99.jpg" alt="Услуги 4" onclick="openFullscreen(this)">
+                <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
+            </div>
+            <div class="image-wrapper">
+                <img src="katalog/katalog1/image99.jpg" alt="Услуги 5" onclick="openFullscreen(this)">
+                <a href="katalog1.html" class="catalog-button" target="_blank">Каталог</a>
+            </div>
+        </div>
+    </div>
 
-    .catalog-button {
-        display: inline-block;
-        margin-top: 5px;
-        padding: 5px 10px;
-        background-color: #007bff;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 14px;
-        text-align: center;
-        transition: background 0.3s;
-    }
-
-    .catalog-button:hover {
-        background-color: #0056b3;
-    }
-</style>
-
-
-    
-
-
-
-    
-
-    
     <!-- Раздел: Кто хочет поработать -->
     <div class="section">
         <h2>Строительство ремонт</h2>
@@ -305,8 +114,6 @@
             <img src="ktohochetporabotati/ad99.jpg" alt="Кто хочет поработать 5" onclick="openFullscreen(this)">
         </div>
     </div>
-
-   
 
     <!-- Раздел: Красота -->
     <div class="section">
@@ -323,24 +130,6 @@
     <div id="fullscreen" class="fullscreen" onclick="closeFullscreen()">
         <img id="fullscreen-img" src="" alt="Fullscreen Image">
     </div>
-
-
-    
-    <script>
-        
-        
-        
-        
-        function openFullscreen(imgElement) {
-            const fullscreenDiv = document.getElementById('fullscreen');
-            const fullscreenImg = document.getElementById('fullscreen-img');
-            fullscreenImg.src = imgElement.src;
-            fullscreenDiv.classList.add('active');
-        }
-
-        function closeFullscreen() {
-            document.getElementById('fullscreen').classList.remove('active');
-        }
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
